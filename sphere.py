@@ -1,3 +1,7 @@
+#Universidad del Valle de Guatemala
+#Proyecto 2 Raycaster
+#20/11/2021
+#Creación de la clase de esfera
 
 from lib import *
 
@@ -6,20 +10,16 @@ class Sphere(object):
     self.center = center
     self.radius = radius
     self.material = material
-    
+  
   def ray_intersect(self, origin, direction):
     L = sub(self.center, origin)
     tca = dot(L, direction)
     l = length(L)
-    
     d2 = l**2 - tca**2
-
     if d2 > self.radius**2:
       return None
 
-    #La distancia del rayo y la esfera
     thc = (self.radius**2 - d2)**(1/2)
-
     t0 = tca - thc
     t1 = tca + thc
 
@@ -27,18 +27,12 @@ class Sphere(object):
       t0 = t1
     if t0 < 0:
       return None
-    
+
     hit = sum(origin, mul(direction, t0))
-    normal = norm (sub(hit, self.center))
+    normal = norm(sub(hit, self.center))
 
-    # t0 es donde pego el rayo
-    return Intersect (
+    return Intersect(
       distance=t0,
-      normal = normal,
-      point = hit
-    
+      normal=normal,
+      point=hit
     )
-
-  
-
-
