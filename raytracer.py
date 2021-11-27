@@ -142,20 +142,20 @@ def setCubes(pos, size, material):
 
 #Materiales
 water = Material(diffuse=color(35, 177, 209), albedo=[0.2, 0.3, 0.8, 0], spec=60 )
-grass = Material(diffuse=color(0, 0, 0), albedo=[0.9, 0.1, 0, 0], spec=10, texture='./textures/grass.bmp', top_texture='./textures/gramita.bmp')
+piso = Material(diffuse=color(0, 0, 0), albedo=[0.9, 0.1, 0, 0], spec=10, texture='./textures/piso.bmp', top_texture='./textures/gramita.bmp')
 madera = Material(diffuse=color(0, 0, 0), albedo=[0.9, 0.1, 0, 0], spec=10, texture='./textures/madera.bmp')
-ladrillo = Material(diffuse=color(0, 0, 0), albedo=[0.9, 0.1, 0, 0], spec=10, texture='./textures/grass.bmp')
+ladrillo = Material(diffuse=color(0, 0, 0), albedo=[0.9, 0.1, 0, 0], spec=10, texture='./textures/piso.bmp')
 aldeano = Material(diffuse=color(0, 0, 0), albedo=[0.9, 0.1, 0, 0], spec=10, texture='./textures/madera.bmp')
 aldeano2 = Material(diffuse=color(0, 0, 0), albedo=[0.9, 0.1, 0, 0], spec=10, texture='./textures/aldeano.bmp')
-leaves = Material(diffuse=color(0, 0, 0), albedo=[0.9, 0.1, 0, 0], spec=10, texture='./textures/leaves.bmp')
-cuerpo = Material(diffuse=color(0, 0, 0), albedo=[0.9, 0.1, 0, 0], spec=10, texture='./textures/leaves.bmp') 
+hojitas = Material(diffuse=color(0, 0, 0), albedo=[0.9, 0.1, 0, 0], spec=10, texture='./textures/hojitas.bmp')
+cuerpo = Material(diffuse=color(0, 0, 0), albedo=[0.9, 0.1, 0, 0], spec=10, texture='./textures/hojitas.bmp') 
 
 r.scene = [
-  Cube(V3(9, 3, -1), leaves),
-  Cube(V3(8, 3, -1.5), leaves),
-  Cube(V3(7, 3, -2), leaves),
-  Cube(V3(7.5, 3, -1), leaves),
-  Cube(V3(8.5, 4, -2), leaves),
+  Cube(V3(9, 3, -1), hojitas),
+  Cube(V3(8, 3, -1.5), hojitas),
+  Cube(V3(7, 3, -2), hojitas),
+  Cube(V3(7.5, 3, -1), hojitas),
+  Cube(V3(8.5, 4, -2), hojitas),
   Cube(V3(8.5, 1, -2), madera),
   Cube(V3(8.5, 2, -2),  madera),
   Cube(V3(8.5, 3, -2),  madera),
@@ -184,8 +184,8 @@ r.scene = [
 ]
 
 #Piso de la escena
-r.scene.extend(setCubes(V3(0, 0, 0), V3(4, 1, 4), grass))
-r.scene.extend(setCubes(V3(4, 0, 0), V3(6, 1, 4), grass))
+r.scene.extend(setCubes(V3(0, 0, 0), V3(4, 1, 4), piso))
+r.scene.extend(setCubes(V3(4, 0, 0), V3(6, 1, 4), piso))
 
 r.envmap = Envmap('./textures/fondo.bmp')
 
